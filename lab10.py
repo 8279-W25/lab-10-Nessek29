@@ -10,3 +10,6 @@ morse_dictionnary={
     '9': '----.', ' ': '/'
 
 }
+# Prompt the user to enter a sentence 
+phrase = input('Enter a sentence: ')
+
