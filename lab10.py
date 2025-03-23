@@ -24,3 +24,21 @@ def cleaned_input(phrase):
             new_phrase += char
 
     return new_phrase
+# create a function  to convert the cleaned sentence into list of morse code
+def conversion_to_morse(phrase):
+    morse_list=[]
+    for char in phrase:
+        if char== ' ': 
+            morse_list.append('//') # Mark word seperation (7 units)
+        else:
+            morse_list.append(morse_dictionnary[char]) # Add morse code for the character
+            morse_list.append('///') # Add letter separation (3 unit)
+        #delete the last  character in the list.
+    if len(morse_list)> 0 and morse_list[-1] == '///': #this checks if the list is not empty and the last character in the list is ///.
+            morse_list.pop()#if so, this will delete de last character from the list to avoid extra separator at end.
+    return morse_list
+
+cleaned_phrase= cleaned_input(phrase)
+result= conversion_to_morse(cleaned_phrase)
+print(result)
+
